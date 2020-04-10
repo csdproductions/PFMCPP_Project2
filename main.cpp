@@ -79,9 +79,9 @@ void variableDeclarations()
     ignoreUnused(a, b, c);
 
     // BOOLEAN
-    bool isTrue = 1;
-    bool isFalse = 0;
-    bool areTheBengalsTheWorstNFLTeamEver = 1;
+    bool isTrue = true;
+    bool isFalse = false;
+    bool areTheBengalsTheWorstNFLTeamEver = true;
 
     ignoreUnused(isTrue, isFalse, areTheBengalsTheWorstNFLTeamEver);
 
@@ -157,7 +157,7 @@ float calculateInterest(float currentBalance = 0.0f, float interestRate = 2.0f)
 /*
  6)
  */
-float convertDogYearsToHumanYears(float dogAge, float multiplier = 7.0f)
+double convertDogYearsToHumanYears(float dogAge, float multiplier = 7.0f)
 {
     ignoreUnused(dogAge, multiplier);
     return {};
@@ -192,7 +192,7 @@ float flightPriceTotal(int noOfPassengers, float flightPrices)
 /*
  10)
  */
-float calculate3dPosition(float x, float y = 2.0f, float z = 1.0f)
+double calculate3dPosition(float x, float y = 2.0f, float z = 1.0f)
 {
     ignoreUnused(x, y, z);
     return{};
@@ -202,37 +202,39 @@ int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
     auto carRented = rentACar(6, 2); 
-    ignoreUnused(carRented);
 
     //1)
     auto calculateThisNumber = myAddingFunction(3, 4);
-    ignoreUnused(calculateThisNumber);
+    
     //2)
     displayMyBirthday(6, 11, 1986);
+    
     //3)
     auto currentTemp = convertFahrenheitToCelcius(32.0f);
-    ignoreUnused(currentTemp);
+    
     //4)
     auto wineRating = isThisAGoodWine(1987);
-    ignoreUnused(wineRating);
+    
     //5)
     auto howMuchMoney = calculateInterest(100.0f);
-    ignoreUnused(howMuchMoney);
+    
     //6)
-    auto myDogAge = convertDogYearsToHumanYears(11.1);
-    ignoreUnused(myDogAge);
+    auto myDogAge = convertDogYearsToHumanYears(11.1f);
+    
     //7)
     xboxOrPS4('X', 'X');
     //8)
     auto boardStance = checkSnowboardRidePosition('G');
-    ignoreUnused(boardStance);
+    
     //9)
-    auto flightsToTheMoon = flightPriceTotal(5, 699.99);
-    ignoreUnused(flightsToTheMoon);
+    auto flightsToTheMoon = flightPriceTotal(5, 699.99f);
+
     //10)
-    auto currentPosition = calculate3dPosition(10.0, 0.5, 8.7);
-    ignoreUnused(currentPosition);
+    auto currentPosition = calculate3dPosition(10.0f, 0.5f, 8.7f);
+    
      
+    ignoreUnused(carRented, calculateThisNumber, currentTemp, wineRating, howMuchMoney, myDogAge, boardStance, flightsToTheMoon, currentPosition);
+
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
