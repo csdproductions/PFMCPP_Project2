@@ -86,9 +86,9 @@ void variableDeclarations()
     ignoreUnused(isTrue, isFalse, areTheBengalsTheWorstNFLTeamEver);
 
     // FLOATING POINT
-    float myBankBalance = 0.0;
-    float myWifesBankBalance = 100.0;
-    float myDogsBankBalance = 500.0;
+    float myBankBalance = 0.0f;
+    float myWifesBankBalance = 100.0f;
+    float myDogsBankBalance = 500.0f;
 
     ignoreUnused(myBankBalance, myWifesBankBalance, myDogsBankBalance);
 
@@ -148,7 +148,7 @@ bool isThisAGoodWine(int year)
 /*
  5)
  */
-float calculateInterest(float currentBalance = 0.0, float interestRate = 2.0)
+float calculateInterest(float currentBalance = 0.0f, float interestRate = 2.0f)
 {
     ignoreUnused(currentBalance, interestRate);
     return {};
@@ -157,7 +157,7 @@ float calculateInterest(float currentBalance = 0.0, float interestRate = 2.0)
 /*
  6)
  */
-double convertDogYearsToHumanYears(double dogAge, double multiplier = 7.0)
+float convertDogYearsToHumanYears(float dogAge, float multiplier = 7.0f)
 {
     ignoreUnused(dogAge, multiplier);
     return {};
@@ -183,7 +183,7 @@ bool checkSnowboardRidePosition(char goofyOrRegular)
 /*
  9)
  */
-double flightPriceTotal(int noOfPassengers, double flightPrices)
+float flightPriceTotal(int noOfPassengers, float flightPrices)
 {
     ignoreUnused(noOfPassengers, flightPrices);
     return {};
@@ -192,9 +192,9 @@ double flightPriceTotal(int noOfPassengers, double flightPrices)
 /*
  10)
  */
-double calculate3dPosition(double x, double y, double z)
+float calculate3dPosition(float x, float y = 2.0f, float z = 1.0f)
 {
-    ignoreUnused(x, y = 2.0, z = 1.0);
+    ignoreUnused(x, y, z);
     return{};
 }
 
@@ -210,13 +210,13 @@ int main()
     //2)
     displayMyBirthday(6, 11, 1986);
     //3)
-    auto currentTemp = convertFahrenheitToCelcius(32.0);
+    auto currentTemp = convertFahrenheitToCelcius(32.0f);
     ignoreUnused(currentTemp);
     //4)
     auto wineRating = isThisAGoodWine(1987);
     ignoreUnused(wineRating);
     //5)
-    auto howMuchMoney = calculateInterest(100.0);
+    auto howMuchMoney = calculateInterest(100.0f);
     ignoreUnused(howMuchMoney);
     //6)
     auto myDogAge = convertDogYearsToHumanYears(11.1);
